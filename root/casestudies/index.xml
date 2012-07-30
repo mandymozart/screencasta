@@ -34,12 +34,16 @@
                 <!-- Image Tag promtes upload utility, if set to internal, flickr, or any kind of 3rd party hoster -->
                 <image id="master" data-type="internal" data-allowed="png,jpg,gif,svg"></image>
                 <title>What Dave does!</title>
-                <textblock data-type="description" data-allowed="">Dave is a Music-Man who has his own band and plays gigs.</textblock>
+                <textblock data-type="description" data-allowed="">
+                    Dave is a Music-Man who has his own band and plays gigs.
+                </textblock>
             </page>
             <page type="inherit">
                 <image id="master" data-type="internal" data-allowed="png,jpg,gif,svg"></image>
                 <title>What is Daves network!</title>
-                <textblock data-type="description">Get people to see how he is doing his "thing" All of his friends and bandmembers have iphones and upload videoclips, photos, and tour reports to containa to promote the band via his followers on youtube, facebook, and instagram..</textblock>
+                <textblock data-type="description">
+                    Get people to see how he is doing his "thing" and make 'em spend their coins for his swag!
+                </textblock>
             </page>
             <page data-type="empty"></page>
         </chapter>
