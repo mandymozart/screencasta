@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!-- containa
-    dependency:
+    data-dependency:
         master - force their head, and classification in case of submerging it to other containers
         slave - any classification will be inherited from master
 
-    -->
-
+-->
 <containa data-type="screencasta" data-global-containa-identifier="GCI-1" data-dependency="master">
+
     <head>
         <meta>
             <title>Case Studies</title>
@@ -20,16 +20,23 @@
             <stylesheet data-type="global"></stylesheet>
         </meta>
     </head>
+
     <!-- prolog, epilog, chapter, page are set to inherit data-type; fluid is fallback value (standard ebook)-->
     <body data-type="fixed">
+
         <prolog>
+
             <page data-type="fixed-hero">
                 <headline data-allowed="plain-text"></headline>
                 <subtitle data-allowed="basic-html"></subtitle>
             </page>
+
         </prolog>
+
         <chapter data-type="fixed">
+
             <title>David Bönsch (musician)</title>
+
             <page data-type="inherit">
                 <!-- Image Tag promtes upload utility, if set to internal, flickr, or any kind of 3rd party hoster -->
                 <image id="master" data-type="internal" data-allowed="png,jpg,gif,svg"></image>
@@ -38,6 +45,7 @@
                     Dave is a Music-Man who has his own band and plays gigs.
                 </textblock>
             </page>
+
             <page type="inherit">
                 <image id="master" data-type="internal" data-allowed="png,jpg,gif,svg"></image>
                 <title>What is Daves network!</title>
@@ -45,13 +53,19 @@
                     Get people to see how he is doing his "thing" and make 'em spend their coins for his swag!
                 </textblock>
             </page>
+
             <page data-type="empty"></page>
+
         </chapter>
+
         <epilog>
+
             <page data-type="fluid">
                 <!-- breaks scope and continues on new one; page is fallback value (page, chapter, containa) -->
                 <break data-type="page"></break>
             </page>
+            
         </epilog>
+
     </body>
 </containa>
