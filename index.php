@@ -54,7 +54,6 @@
                 <hr/>
                 <div>
                     <span class="label label-info"> Developer Tools</span> -
-                    <a data-toggle="modal" href="#modalUpload">Upload</a> /
                     <a data-toggle="modal" href="#modalDebugger">Debugging Console</a>
                 </div>
             </footer>
@@ -72,32 +71,6 @@
 
 
         <!-- Modals - come bundled with Bootstrap -->
-            <!-- Upload
-            =========================================================================================================-->
-        <div class="modal hide fade" id="modalUpload">
-            <div class="modal-header">
-                <button type="button" class="close" data-dismiss="modal">×</button>
-                <h3>Upload</h3>
-            </div>
-            <div class="modal-body">
-                <p>The uploader let's you share you project and all the individual tracks to your cloud. Select up to 8 files for upload. <span class="label label-warning"> WAV format only </span> </p>
-                <div id="walkThrough" class="alert alert-info">
-                    <strong>Walk-Through</strong>
-                    <span id="walkThroughBody">
-                        Runtime error!
-                    </span>
-                </div>
-                <div id="uploadView">
-                    <div id="uploadList" class="well">
-                    </div>
-                </div>
-            </div>
-            <div class="modal-footer">
-                <a href="#" class="btn" data-dismiss="modal">Close</a>
-                <a id="pickfiles" class="btn btn-info" href="javascript:;">Select Files</a>
-                <a id="uploadfiles" class="btn btn-primary" href="javascript:;">Start Upload</a>
-            </div>
-        </div>
 
             <!-- About
             =========================================================================================================-->
