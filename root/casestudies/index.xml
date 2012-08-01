@@ -17,6 +17,7 @@
             <!-- Templating
                  type: global,local,web -->
             <template data-type="global"></template>
+            <preset data-type="global"></preset>
             <stylesheet data-type="global"></stylesheet>
         </meta>
     </head>
@@ -46,7 +47,7 @@
                 </textblock>
             </page>
 
-            <page type="inherit">
+            <page data-type="inherit">
                 <image id="master" data-type="internal" data-allowed="png,jpg,gif,svg"></image>
                 <title>What is Daves network!</title>
                 <textblock data-type="description">
@@ -62,7 +63,7 @@
 
             <page data-type="fluid">
                 <!-- breaks scope and continues on new one; page is fallback value (page, chapter, containa) -->
-                <break data-type="page"></break>
+                <break data-type="page" />
             </page>
 
         </epilog>

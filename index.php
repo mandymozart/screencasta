@@ -15,6 +15,7 @@
         <link href="assets/css/containa.screencasta.css" rel="stylesheet" type="text/css" media="screen" />
         <link href="assets/css/containa.screencasta.icons.css" rel="stylesheet" type="text/css" media="screen" />
         <link href="assets/css/containa.screencasta.header.css" rel="stylesheet" type="text/css" media="screen" />
+        <link href="assets/css/containa.screencasta.casts.css" rel="stylesheet" type="text/css" media="screen" />
 
     </head>
 	
@@ -26,8 +27,9 @@
         <div class="container-fluid" id="mainLayout">
             <div class="row-fluid">
                 <div class="span6">
-                    <div class="well casts">
-                        <div id="folderView"></div>
+                    <div class="well casts" id="innerFrame">
+                        <div id="folderView">
+                            <a href="javascript:$('#folderView').alternateScroll('remove');">Remove facescroll scrollbar</a> / <a href="javascript:$('#folderView').alternateScroll({'vertical-bar-class': 'styled-v-bar', 'hide-bars': false });">Add facescroll scrollbar</a></div>
                     </div><!--/.well -->
                 </div><!--/span-->
                 <div class="span6">
@@ -46,10 +48,10 @@
                     </div>
                 </div><!--/span-->
             </div><!--/row-->
-            <hr>
+
             <footer>
                 <p>
-                    Copyright &copy; <span class="icon-labs"></span> Containa 2012 / <a data-toggle="modal" href="#modalAbout">About</a> / <a data-toggle="modal" href="#modalAboutScreenCasta">About ScreenCasta&trade;</a>
+                    Copyright &copy; <span class="icon-adjust"></span> Containa 2012 / <a data-toggle="modal" href="#modalAbout">About</a> / <a data-toggle="modal" href="#modalAboutScreenCasta">About ScreenCasta&trade;</a>
                 </p>
                 <hr/>
                 <div>
@@ -77,16 +79,16 @@
         <div class="modal hide fade" id="modalAbout">
             <div class="modal-header">
                 <button type="button" class="close" data-dismiss="modal">×</button>
-                <h3><span class="icon-labs"></span> Containa</h3>
+                <h3><span class="icon-adjust"></span> Containa</h3>
             </div>
             <div class="modal-body">
-                <h4>What's the intend of the Labs?</h4>
+                <h4>What's this?</h4>
                 <p>
                     This application is a development of Containa as part of Social Self-Publishing GbR.
                     You have been granted limited access, and are obligated to the none-disclosure agreement.
                 </p>
                 <h4>Current Demand</h4>
-                <p>If you anticipate with our development, we highly motive you to contact our team at this early stage.
+                <p>If you anticipate with our development, we highly encourage you to contact our team at this early stage.
                     <a href="mailto:kanbandmc@gmail.com"><span class="icon-envelope"></span> kanbandmc@gmail.com</a></p>
 
             </div>
@@ -150,7 +152,14 @@
         <script id="itemTemplate" type="text/x-handlebars-template">
             <tr>
                 <td>
-                    {{cast.title}} <span class="badge">{{cast.pages}}</span>
+                    <a href="#detailsView" data-toggle="details"><span class="icon-info-sign"></span> {{filename}}</a>
+                </td>
+                <td>
+                    <span class="badge">{{filepath}}</span>
+                </td>
+                <td>
+                    <a href="#modalDebugger" data-toggle="modal"><span class="icon-wrench"></span></a>
+                    <a href="#readerView" data-toggle="reader"><span class="icon-fullscreen"></span></a>
                 </td>
             </tr>
         </script>
@@ -165,7 +174,7 @@
             <!-- headerPartial
             =========================================================================================================-->
         <script id="headerPartial" type="text/x-handlebars-template">
-            <h4><span class="icon-music"></span> {{file.name}}</h4>
+            <h4><span class="icon-picture"></span> {{filename}} {{filepath}}</h4>
         </script>
 
             <!-- miniaturePartial
@@ -178,18 +187,28 @@
         <!-- Loading Scripts -->
         <script src="assets/js/jquery-1.7.2.min.js" type="text/javascript"></script>
         <script src="assets/js/jquery.easing.1.3.js" type="text/javascript"></script>
+        <script src="assets/js/jquery-ui.min.js" type="text/javascript" ></script>
+        <script src="assets/js/jquery.ui.touch-punch.min.js" type="text/javascript" ></script>
 
+        <!-- Scrollbehavior/Style -->
+        <script src="assets/js/jquery.scrollTo.js" type="text/javascript"></script>
+        <script src="assets/js/jquery.localScroll.js" type="text/javascript"></script>
+        <script src="assets/js/jquery.serialScroll.js" type="text/javascript"></script>
+        <script src="assets/js/facescroll.js" type="text/javascript"></script>
 
         <!-- Scaffolding -->
         <script src="assets/js/bootstrap.min.js" type="text/javascript"></script>
         <script src="assets/js/handlebars-1.0.0.js" type="text/javascript"></script>
 
-        <!-- App -->
+        <!-- App // TODO: replace most app components with containa Jquery plugins  -->
         <script src="assets/js/app.js" type="text/javascript"></script>
         <script src="assets/js/app.resize.js" tape="text/javascript"></script>
+        <script src="assets/js/app.scroll.js" type="text/javascript"></script>
         <script src="assets/js/app.hasher.js" type="text/javascript"></script>
         <script src="assets/js/app.folder.js" type="text/javascript"></script>
 
+        <!-- Containa Jquery Plugins -->
+        <script src="assets/js/containa-reader.js" type="text/javascript"></script>
     </body>
 	
 </html>

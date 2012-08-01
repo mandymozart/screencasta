@@ -2,13 +2,13 @@
 // // 
 // Return JSON Object
 // for debuggin uncomment
+// Screencasts XML read from
 error_reporting(-1);
 // LIBRARIES
-require('library/waveform.php');
-require('library/getid3/getid3.php');
+
 
 //
-$filetypes = array ('wav','WAV');
+$filetypes = array ('xml','XML');
 $filesArr = array(); // 
 
 $root = "../root/";
@@ -16,8 +16,6 @@ $root = "../root/";
 //$dir = "mandymozart/fulltracks/featjiinep/";
 $dir = urldecode($_POST['ajax']);
 
-// getID3 Initializing Class
-$getID3 = new getID3;
 
 if( file_exists($root . $dir) ) {
 	$files = scandir($root . $dir);
