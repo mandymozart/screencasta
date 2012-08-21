@@ -188,6 +188,8 @@
         return this.each(function () {
             var $this = $(this)
                 , data = $this.data('reader')
+                /* hacking in to add sourcefileloader */
+                , source = $this.data('source')
                 , options = $.extend({}, $.fn.reader.defaults, $this.data(), typeof option == 'object' && option)
             if (!data) $this.data('reader', (data = new reader(this, options)))
             if (typeof option == 'string') data[option]()

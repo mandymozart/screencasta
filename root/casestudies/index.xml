@@ -8,18 +8,25 @@
 <containa data-type="screencasta" data-global-containa-identifier="GCI-1" data-dependency="master">
 
     <head>
+        <!-- meta data will be mandatory also for catalog options across listings, search-engines, etc. -->
         <meta>
             <title>Case Studies</title>
             <author>Containa</author>
+            <!-- TODO: RDF semantics go here -->
             <!-- Identifier
-                type: gci, isbn, drm, label-code, custom -->
+                 type: gci, isbn, drm, label-code, custom -->
             <unique-identifier data-type="custom"></unique-identifier>
-            <!-- Templating
-                 type: global,local,web -->
-            <template data-type="global"></template>
-            <preset data-type="global"></preset>
-            <stylesheet data-type="global"></stylesheet>
         </meta>
+        <!-- Presets give the containa it's shape and basic functionality and allow templating
+             type: global, local => /presets/ -->
+        <preset data-type="global">
+            <!-- global, local => /presets/tmpl/ -->
+            <template data-type="global"></template>
+            <!-- global, local => /presets/css/ -->
+            <stylesheet data-type="global"></stylesheet>
+            <!-- global, local => /presets/js/ -->
+            <script data-type="global"></script>
+        </preset>
     </head>
 
     <!-- prolog, epilog, chapter, page are set to inherit data-type; fluid is fallback value (standard ebook)-->

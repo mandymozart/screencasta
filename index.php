@@ -9,8 +9,9 @@
 
         <link rel="shortcut icon" href="assets/ico/favicon.ico">
 
-        <link href="assets/css/bootstrap.min.css" rel="stylesheet" type="text/css" media="screen" />
+        <link href="assets/css/bootstrap.css" rel="stylesheet" type="text/css" media="screen" />
         <link href="assets/css/bootstrap-responsive.min.css" rel="stylesheet" type="text/css" media="screen" />
+        <link href="assets/css/bootstrap-reader.css" rel="stylesheet" type="text/css" media="screen" />
         <link href="assets/css/containa.css" rel="stylesheet" type="text/css" media="screen" />
         <link href="assets/css/containa.screencasta.css" rel="stylesheet" type="text/css" media="screen" />
         <link href="assets/css/containa.screencasta.icons.css" rel="stylesheet" type="text/css" media="screen" />
@@ -64,10 +65,21 @@
 
             <!-- readerLayout
             =========================================================================================================-->
-        <div class="container-fluid" id="readerLayout">
-            <div class="row-fluid">
-
+        <div class="container-fluid reader hide fade" id="readerView">
+            <div class="reader-header">
+                <button type="button" class="close" data-dismiss="reader">×</button>
+                <h3><span class="icon-eye-open"></span> Reader</h3>
             </div>
+            <div class="reader-body">
+                <!-- The following is a manual interpretation of tmpl/xhtml demo screencasta containa -->
+                <div class="row-fluid">
+                    <div class="span12"><img src="/.../" id="imageMaster"/></div>
+                </div>
+            </div>
+            <div class="reader-footer">
+                <a href="#" class="btn" data-dismiss="reader">Close</a>
+            </div>
+
         </div>
             <!-- /readerLayout -->
 
@@ -143,25 +155,19 @@
             <!-- list
             =========================================================================================================-->
         <script id="listTemplate" type="text/x-handlebars-template">
-            <table class="table casts-table" id="castsList">
-            </table>
+            <ul class="thumbnails casts-table" id="castsList">
+            </ul>
         </script>
 
             <!-- item
             =========================================================================================================-->
         <script id="itemTemplate" type="text/x-handlebars-template">
-            <tr>
-                <td>
-                    <a href="#detailsView" data-toggle="details"><span class="icon-info-sign"></span> {{filename}}</a>
-                </td>
-                <td>
-                    <span class="badge">{{filepath}}</span>
-                </td>
-                <td>
-                    <a href="#modalDebugger" data-toggle="modal"><span class="icon-wrench"></span></a>
-                    <a href="#readerView" data-toggle="reader"><span class="icon-fullscreen"></span></a>
-                </td>
-            </tr>
+            <li class="span6">
+                <a href="#detailsView" data-toggle="details" class="thumbnail">
+                    <img src="http://placehold.it/400x300" /></a>
+
+                    <a href="#readerView" data-toggle="reader" data-source="{{filepath}}"><span class="icon-eye-close"></span></a>
+            </li>
         </script>
 
             <!-- details
@@ -197,7 +203,7 @@
         <script src="assets/js/facescroll.js" type="text/javascript"></script>
 
         <!-- Scaffolding -->
-        <script src="assets/js/bootstrap.min.js" type="text/javascript"></script>
+        <script src="assets/js/bootstrap.js" type="text/javascript"></script>
         <script src="assets/js/handlebars-1.0.0.js" type="text/javascript"></script>
 
         <!-- App // TODO: replace most app components with containa Jquery plugins  -->
