@@ -35,18 +35,18 @@
                 </div><!--/span-->
                 <div class="span6">
                     <div id="headerView">
-                        <h1>ScreenCasta&trade; <small>Share, Sell & Collect presentations!</small></h1>
-                        <p>Select casts from menu and load file info's here.</p>
+                        <h1>Containa <small>Mircosite</small></h1>
+                        <p>Select containa from menu and load file details here.</p>
                     </div>
                     <div id="detailsView"></div>
-                    <hr />
+                    <!-- <hr />
                     <div class="alert alert-warning" id="demoRemarksView">
                         <button class="close" data-dismiss="alert">×</button>
                         <strong>Demo Remarks!</strong>
                         <ul id="demoRemarksList">
                             <li>Miniature will use placeholder instead of canvas Screenshots </li>
                         </ul>
-                    </div>
+                    </div> -->
                 </div><!--/span-->
             </div><!--/row-->
 
@@ -114,7 +114,7 @@
         <div class="modal hide fade" id="modalAboutScreenCasta">
             <div class="modal-header">
                 <button type="button" class="close" data-dismiss="modal">×</button>
-                <h3>About ScreenCasta&trade; <span class="label label-notice"> pre-alpha! </span></h3>
+                <h3>About Containa&trade; <span class="label label-notice"> pre-alpha! </span></h3>
             </div>
             <div class="modal-body">
                 <h4>Functionality:</h4>
@@ -155,38 +155,81 @@
             <!-- list
             =========================================================================================================-->
         <script id="listTemplate" type="text/x-handlebars-template">
-            <ul class="thumbnails casts-table" id="castsList">
-            </ul>
+            <div class="row-fluid casts-table" id="castsList">
+            </div>
         </script>
 
             <!-- item
             =========================================================================================================-->
         <script id="itemTemplate" type="text/x-handlebars-template">
-            <li class="span6">
-                <a href="#detailsView" data-toggle="details" class="thumbnail">
-                    <img src="http://placehold.it/400x300" /></a>
+            <li class="span4">
+                <a href="#readerView" data-toggle="reader" rel="{{containaAlias}}" data-source="{{containaAlias}}" class="readerLink"><span class="icon-eye-close"></span></a> {{data.meta.titel}}
+                <a href="#detailsView" data-toggle="details" rel="{{containaURI}}" data-source="{{containaAlias}}" class="thumbnail detailsLink">
+                    <img src="{{containaURI}}cover.png" /></a>
 
-                    <a href="#readerView" data-toggle="reader" data-source="{{filepath}}"><span class="icon-eye-close"></span></a>
+
             </li>
+        </script>
+
+        <!-- containa
+        =========================================================================================================-->
+        <script id="containaTemplate" type="text/x-handlebars-template">
+            <div class="row-fluid">
+                <div class="span12">
+                    <h1>{{meta.titel}}</h1>
+                    {{> meta}}
+                    <div class="asset" contenteditable="true">
+                        <p>Code or Special Quote Asset here. Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut et accumsan et iusto odio dignissim qui blandit praesent luptatum zzril delenit Lorem ipsum dolor sit amet, volutpat.</p>
+                    </div>
+                    <div class="asset" contenteditable="true">
+                        <h1>This Asset Box Creator Is the Beauty</h1>
+
+                        <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut et accumsan et iusto odio dignissim qui blandit praesent luptatum zzril delenit Lorem ipsum dolor sit amet, volutpat. </p>
+                        Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut et accumsan et iusto odio dignissim qui blandit praesent luptatum zzril delenit Lorem ipsum dolor sit amet, volutpat.
+                        Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut et accumsan et iusto odio dignissim qui blandit praesent luptatum zzril delenit Lorem ipsum dolor sit amet, volutpat.Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut et accumsan et iusto odio dignissim qui blandit praesent luptatum zzril delenit Lorem ipsum dolor sit amet, volutpat.Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut et accumsan et iusto odio dignissim qui blandit praesent luptatum zzril delenit Lorem ipsum dolor sit amet, volutpat.
+                    </div>
+                    <div class="asset" contenteditable="true">
+                        <h2>
+                            <img class="thumbnail span6" src="root/asset-containa/cover.png" style="float:left; margin-right:20px;
+  margin-bottom:10px" alt="Text?">Oder denkt er an ...?
+                        </h2>
+
+                        <p>
+                            Manche Texte erschlie&szlig;en sich nur aus der n&ouml;tigen Distanz. <!-- usw. -->
+                            Aber das hier, das ist richtiger Text. Und er flie&szlig;t sogar,
+                            n&auml;mlich um die Grafik.<br style="clear:both">
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </script>
+
+            <!-- meta -->
+        <script id="metaPartial" type="text/x-handlebars-template">
+            <p>
+                <span class="icon-adjust"></span> {{meta.titel}}<br/>
+                <span class="icon-user"></span> {{meta.author}}<br/>
+                <span class="icon-barcode"></span> {{meta.id.idValue}} ({{meta.id.idType}})</p>
         </script>
 
             <!-- details
             =========================================================================================================-->
         <script id="detailsTemplate" type="text/x-handlebars-template">
-            {{> header}}
-            {{> miniatur}}
+            {{> miniature}}
+
         </script>
 
             <!-- headerPartial
             =========================================================================================================-->
         <script id="headerPartial" type="text/x-handlebars-template">
-            <h4><span class="icon-picture"></span> {{filename}} {{filepath}}</h4>
+            <h4><span class="icon-adjust"></span> {{file.name}} {{file.path}}</h4>
         </script>
 
             <!-- miniaturePartial
             =========================================================================================================-->
         <script id="miniaturePartial" type="text/x-handlebars-template">
-            <img src="http://placehold.it/300x200" alt="miniatur" id="miniature">
+            <a href="" class="thumbnail span6">
+            <img src="root/editor/cover.png" alt="miniatur" id="miniature"></a>
         </script>
 
 
@@ -208,7 +251,7 @@
 
         <!-- App // TODO: replace most app components with containa Jquery plugins  -->
         <script src="assets/js/app.js" type="text/javascript"></script>
-        <script src="assets/js/app.resize.js" tape="text/javascript"></script>
+        <script src="assets/js/app.resize.js" type="text/javascript"></script>
         <script src="assets/js/app.scroll.js" type="text/javascript"></script>
         <script src="assets/js/app.hasher.js" type="text/javascript"></script>
         <script src="assets/js/app.folder.js" type="text/javascript"></script>

@@ -3,4 +3,5 @@
 // Loading once DOM is ready
 $(document).ready( function() {
     //$('#readerLayout').hide();
+
 });

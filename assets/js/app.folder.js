@@ -11,40 +11,55 @@ $(document).ready( function() {
         $('#folderView').html(template());
 
         var template = Handlebars.compile($("#itemTemplate").html());
-        var i = 0;
         var cast = new Object();
         $.each (data, function(key,val){
             //TODO: cast.title, cast.pages, cast.structure
-            $('#debugger').append(' > jsonstring ' + val['data']['meta']['titel']);
+            //$('#debugger').append(' > jsonstring ' + val['data']['meta']['titel'] + '<br/>');
             //Renaming ?
             $.each (val, function (k,v) {
                 cast[k] = v;
             });
-            i++;
             $('#castsList').append(template(cast));
-            $('#debugger').append(' > attached relese ' + i + '<br/>');
         });
 
-        // enable Links
-        $('.casts-table a').click( function(){
-            var template = Handlebars.compile($("#detailsTemplate").html());
-            Handlebars.registerPartial("header", $("#headerPartial").html());
-            Handlebars.registerPartial("miniature", $("#miniaturePartial").html());
+        // enable Links for Details
+        $('.casts-table a.detailsLink').click( function(){
+            var containaAlias = $(this).attr('data-source');
+            $('#debugger').append(' > alias:'+containaAlias+'<br/>');
+            $.ajax({
+                type: "POST",
+                url: 'application/getRelease.php',
+                dataType: 'json',
+                data: { ajax:containaAlias },
+                success: function(data) {
+                    $('#debugger').append(' > jsonreturned ' + data);
+                    var template = Handlebars.compile($('#detailsTemplate').html());
+                    Handlebars.registerPartial("miniature", $("#miniaturePartial").html());
+                    Handlebars.registerPartial("meta", $("#metaPartial").html());
 
-            var file = $(this).attr('rel');
-            $('#debugger').append(' > showDetails ' + file);
-            var file_arr = file.split('/');
-            var path = file_arr.join('/');
-            var miniature = "cover.png";
-            var data = {
-                file: {
-                    "path": path,
-                    "name": file_arr.pop(),
-                    "miniature": miniature }
-            };
+                $('#detailsView').html(template(data['data']));
+                }
+            });
+        });
 
-            $('#detailsView').html(template(data));
+        //enable Links for Reader
+        $('.casts-table a.readerLink').click( function(){
+            var containaAlias = $(this).attr('data-source');
+            $('#debugger').append(' > alias:'+containaAlias+'<br/>');
+            $.ajax({
+                type: "POST",
+                url: 'application/getRelease.php',
+                dataType: 'json',
+                data: { ajax:containaAlias },
+                success: function(data) {
+                    $('#debugger').append(' > jsonreturned ' + data);
+                        var template = Handlebars.compile($('#containaTemplate').html());
+                        Handlebars.registerPartial("header", $("#headerPartial").html());
+                        Handlebars.registerPartial("meta", $("#metaPartial").html());
 
+                        $('.reader-body').html(template(data['data']));
+                }
+            });
         });
     });
 });

@@ -8,47 +8,54 @@ error_reporting(-1);
 
 
 //
-$filetypes = array ('xml','XML');
+$filetypes = array ('json','JSON');
 $filesArr = array(); // 
 
 $root = "../root/";
 
-$dir = "casestudies/";
+$dir = "";
 //$dir = urldecode($_POST['ajax']);
 
 
 if( file_exists($root . $dir) ) {
-	$files = scandir($root . $dir);
-	natcasesort($files);
-	if( count($files) > 2 ) { // The 2 accounts for . and ..
-		// All files
-		foreach( $files as $file ) {
-			$ext = preg_replace('/^.*\./', '', $file);
-			if( file_exists($root . $dir . $file) && $file != '.' && $file != '..' && !is_dir($root . $dir . $file) ) {
-				$ext = preg_replace('/^.*\./', '', $file);
-				// display only WAV Files
-				if(in_array($ext,$filetypes)){
-                    $xml = array();
-                    // Parse XML only for cast.title, cast.pages, cast
-                    $xml_parser = xml_parser_create(); // erzeugt neuen Parser
-                    $data = implode (file ($root . $dir . $file), ""); // file() liest die Datei in ein Array ein
-                    xml_parse_into_struct ($xml_parser, $data, $values, $index); // parst XML-Datei in assoziativen Array
-                    xml_parser_free ($xml_parser);
-                    foreach ($values as $value) { // Ausgabe der Daten des assoziativen Array
-                        $xml[] = $value;
+    $folders = scandir($root . $dir);
+    natcasesort($folders);
+    print_r ($folders);
+    if( count($folders) > 2 ){
+        // All Folders
+        foreach( $folders as $folder ){
+            $ext = preg_replace('/^.*\./', '', $folder);
+            print $root.$dir.$folder;
+            if( $folder != '.' && $folder != '..' && is_dir($root . $dir . $folder) ) {
+                $files = scandir($root . $dir . $folder);
+                natcasesort($files);
+                print_r ($files);
+                if( count($files) > 2 ) { // The 2 accounts for . and ..
+                    // All files
+                    foreach( $files as $file ) {
+                        $ext = preg_replace('/^.*\./', '', $file);
+                        print $root.$dir.$folder."/".$file;
+                        if( file_exists($root . $dir . $folder ."/" . $file) && $file != '.' && $file != '..' && !is_dir($root . $dir . $folder ."/" . $file) ) {
+                            $ext = preg_replace('/^.*\./', '', $file);
+
+                            // read only allowed fileTypes
+                            if(in_array($ext,$filetypes)){
+                                $data = file_get_contents($root . $dir . $folder . $file);
+
+                                // Add Element to Array
+                                $filesArr[] = array(
+                                    'hasher' => $dir,
+                                    'filename' => $file,
+                                    'filepath' => 'root/'.$dir.$folder.$file,
+                                    'data' => $data
+                                );
+                            }
+                        }
                     }
-					// Add Element to Array
-					$filesArr[] = array(
-						'hasher' => $dir,
-						'filename' => $file,
-						'filepath' => 'root/'.$dir.$file,
-                        'xml-struct-array' => json_encode($xml),
-                        'xml-values' => json_encode($values)
-                    );
-				}
-			}		
-		}
-	}
-	echo json_encode($filesArr);
+                }
+            }
+        }
+    }
+    echo json_encode($filesArr);
 }
 ?>

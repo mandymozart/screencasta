@@ -54,7 +54,18 @@
             $('body').addClass('reader-open')
 
             this.isShown = true
-
+            // attempt to build containa-api directly into bootstrap
+            //$('.reader-body').html('Loading ...');
+            /*
+             $.ajax({
+                type: 'POST',
+                url: 'application/getRelease.php',
+                data: {ajax:containaURI},
+                dataType: 'json',
+                success: function(data) {
+                }
+            });
+            */
             escape.call(this)
             backdrop.call(this, function () {
                 var transition = $.support.transition && that.$element.hasClass('fade')
@@ -189,7 +200,6 @@
             var $this = $(this)
                 , data = $this.data('reader')
                 /* hacking in to add sourcefileloader */
-                , source = $this.data('source')
                 , options = $.extend({}, $.fn.reader.defaults, $this.data(), typeof option == 'object' && option)
             if (!data) $this.data('reader', (data = new reader(this, options)))
             if (typeof option == 'string') data[option]()
