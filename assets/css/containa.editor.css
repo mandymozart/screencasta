@@ -2,3 +2,7 @@ body {
     background:url("../img/background-overlay.png");
 }
 
+.assetEditor {
+    border:1px solid;
+    height:200px;
+}

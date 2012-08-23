@@ -35,14 +35,139 @@
     <div class="row-fluid">
         <div class="span6">
             <div class="" id="innerFrame">
-                <div class="toolbar" id="toolbar">
-                </div>
+                <div class="row-fluid">
+                    <div class="span12">
+                        <div class="assetEditor">
+                            <ul class="nav nav-tabs" id="myTab">
+                                <li class="active"><a href="#text"><span class="icon-file"></span> Text</a></li>
+                                <li><a href="#media"><span class="icon-film"></span>Photo/Video</a></li>
+                                <li><a href="#audio">Audio</a></li>
+                                <li><a href="#chart">Chart</a></li>
+                            </ul>
 
-                <div id="wrapper">
-                    <div id="contentView" class="clear well well-small">
-                        . . . Type, little Shakespear!
+                            <div class="tab-content">
+                                <div class="tab-pane active" id="text">
+                                    <div id="wrapper">
+                                        <div id="contentView" class="clear">
+                                            . . . Type, little Shakespear!
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="tab-pane" id="media">
+                                    Upload Photo/Video | Use Webcam | Create Photoalbum
+                                </div>
+                                <div class="tab-pane" id="audio">
+                                    Upload Audio
+                                </div>
+                                <div class="tab-pane" id="chart">
+                                    Import Excel CVS | Create Own
+                                </div>
+                            </div>
+                        </div>
+                        <div class="toolbar" id="toolbar">
+                        </div>
                     </div>
                 </div>
+                <div class="row-fluid">
+                    <div class="span12">
+                        <div class="assetEditor">
+                            <ul class="nav nav-tabs" id="myTab2">
+                                <li class="active"><a href="#text"><span class="icon-file"></span> Text</a></li>
+                                <li><a href="#media"><span class="icon-film"></span>Photo/Video</a></li>
+                                <li><a href="#audio">Audio</a></li>
+                                <li><a href="#chart">Chart</a></li>
+                            </ul>
+
+                            <div class="tab-content">
+                                <div class="tab-pane active" id="text2">
+                                    <div id="wrapper2">
+                                        <div id="contentView2" class="clear">
+                                            . . . Type, little Shakespear!
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="tab-pane" id="media2">
+                                    Upload Photo/Video | Use Webcam | Create Photoalbum
+                                </div>
+                                <div class="tab-pane" id="audio2">
+                                    Upload Audio
+                                </div>
+                                <div class="tab-pane" id="chart2">
+                                    Import Excel CVS | Create Own
+                                </div>
+                            </div>
+                        </div>
+                        <div class="toolbar" id="toolbar2">
+                        </div>
+                    </div>
+                </div>
+                <div class="row-fluid">
+                    <div class="span6">
+                        <div class="assetEditor">
+                            <ul class="nav nav-tabs" id="myTab3">
+                                <li class="active"><a href="#text"><span class="icon-file"></span> Text</a></li>
+                                <li><a href="#media"><span class="icon-film"></span>Photo/Video</a></li>
+                                <li><a href="#audio">Audio</a></li>
+                                <li><a href="#chart">Chart</a></li>
+                            </ul>
+
+                            <div class="tab-content">
+                                <div class="tab-pane active" id="text3">
+                                    <div id="wrapper3">
+                                        <div id="contentView3" class="clear">
+                                            . . . Type, little Shakespear!
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="tab-pane" id="media3">
+                                    Upload Photo/Video | Use Webcam | Create Photoalbum
+                                </div>
+                                <div class="tab-pane" id="audio3">
+                                    Upload Audio
+                                </div>
+                                <div class="tab-pane" id="chart3">
+                                    Import Excel CVS | Create Own
+                                </div>
+                            </div>
+                        </div>
+                        <div class="toolbar" id="toolbar3">
+                        </div>
+                    </div>
+                    <div class="span6">
+                        <div class="assetEditor">
+                            <ul class="nav nav-tabs" id="myTab4">
+                                <li class="active"><a href="#text"><span class="icon-file"></span> Text</a></li>
+                                <li><a href="#media"><span class="icon-film"></span>Photo/Video</a></li>
+                                <li><a href="#audio">Audio</a></li>
+                                <li><a href="#chart">Chart</a></li>
+                            </ul>
+
+                            <div class="tab-content">
+                                <div class="tab-pane active" id="text4">
+                                    <div id="wrapper4">
+                                        <div id="contentView4" class="clear">
+                                            . . . Type, little Shakespear!
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="tab-pane" id="media4">
+                                    Upload Photo/Video | Use Webcam | Create Photoalbum
+                                </div>
+                                <div class="tab-pane" id="audio4">
+                                    Upload Audio
+                                </div>
+                                <div class="tab-pane" id="chart4">
+                                    Import Excel CVS | Create Own
+                                </div>
+                            </div>
+                        </div>
+                        <div class="toolbar" id="toolbar4">
+                        </div>
+                    </div>
+                </div>
+
+
+
                 <button class="btn append btn-large btn-primary" style="width:100%"><span class="icon-comment icon-white"></span> <span class="btn-text">Add</span></button>
             </div><!--/.well -->
         </div><!--/span-->

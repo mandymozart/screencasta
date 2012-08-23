@@ -29,4 +29,10 @@ $(document).ready(function(){
     $("#contentView").on('change', function() {
     console.log("content changed");
     });
+
+    $('#myTab a').click(function (e) {
+        e.preventDefault();
+        $(this).tab('show');
+    })
+
 });
