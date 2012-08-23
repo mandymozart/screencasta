@@ -14,7 +14,7 @@ $(document).ready( function() {
         var cast = new Object();
         $.each (data, function(key,val){
             //TODO: cast.title, cast.pages, cast.structure
-            //$('#debugger').append(' > jsonstring ' + val['data']['meta']['titel'] + '<br/>');
+            $('#debugger').append(' > jsonstring ' + val['data']['meta']['titel'] + '<br/>');
             //Renaming ?
             $.each (val, function (k,v) {
                 cast[k] = v;
@@ -32,19 +32,23 @@ $(document).ready( function() {
                 dataType: 'json',
                 data: { ajax:containaAlias },
                 success: function(data) {
-                    $('#debugger').append(' > jsonreturned ' + data);
+                    $.each (data, function(k,v){
+                        $('#debugger').append(" > data: "+k+" : "+v);
+                    });
+                    $('#debugger').append(' > jsonreturned ' + data['data']['meta']['titel']);
                     var template = Handlebars.compile($('#detailsTemplate').html());
                     Handlebars.registerPartial("miniature", $("#miniaturePartial").html());
                     Handlebars.registerPartial("meta", $("#metaPartial").html());
+                    Handlebars.registerPartial("social", $("#socialPartial").html());
 
-                $('#detailsView').html(template(data['data']));
+                $('#detailsView').html(template(data));
                 }
             });
         });
 
         //enable Links for Reader
-        $('.casts-table a.readerLink').click( function(){
-            var containaAlias = $(this).attr('data-source');
+        $('.readerLink').click( function(){
+            var containaAlias = $(this).attr('rel');
             $('#debugger').append(' > alias:'+containaAlias+'<br/>');
             $.ajax({
                 type: "POST",
@@ -57,7 +61,7 @@ $(document).ready( function() {
                         Handlebars.registerPartial("header", $("#headerPartial").html());
                         Handlebars.registerPartial("meta", $("#metaPartial").html());
 
-                        $('.reader-body').html(template(data['data']));
+                        $('.reader-body').html(template(data));
                 }
             });
         });

@@ -1,0 +1,83 @@
+#castsList {
+    position: relative;
+}
+#castsList > img {
+    z-index: 1;
+    left: 0px;
+    top: 0px;
+}
+
+#folderView {
+    width: 100%;
+}
+
+.casts-table li {
+
+}
+
+/* Overwrite Bootstrap */
+.row-fluid [class*="span"] li {
+    margin:1%;
+    margin-top:0px;
+    margin-left:0px;
+}
+
+.thumbnails {
+    margin-left: -20px;
+    list-style: none;
+    *zoom: 1;
+}
+.thumbnails:before,
+.thumbnails:after {
+    display: table;
+    content: "";
+}
+.thumbnails:after {
+    clear: both;
+}
+.row-fluid .thumbnails {
+    margin-left: 0;
+}
+.thumbnails > li {
+    float: left;
+    margin-bottom: 18px;
+    margin-left: 20px;
+}
+.thumbnail {
+    display: block;
+    padding: 4px;
+    line-height: 1;
+    border: 1px solid #ddd;
+    -webkit-border-radius: 0px;
+    -moz-border-radius: 0px;
+    border-radius: 0px;
+    border-bottom: 1px solid #C6C6C6;
+    border-right: 1px solid #C6C6C6;
+    -webkit-box-shadow: 0 1px 1px rgba(0, 0, 0, 0.075);
+    -moz-box-shadow: 0 1px 1px rgba(0, 0, 0, 0.075);
+    box-shadow: 0 1px 1px rgba(0, 0, 0, 0.075);
+    background: -moz-linear-gradient(top,  rgba(0,0,0,0) 0%, rgba(0,0,0,0.11) 100%); /* FF3.6+ */
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(0,0,0,0)), color-stop(100%,rgba(0,0,0,0.11))); /* Chrome,Safari4+ */
+    background: -webkit-linear-gradient(top,  rgba(0,0,0,0) 0%,rgba(0,0,0,0.11) 100%); /* Chrome10+,Safari5.1+ */
+    background: -o-linear-gradient(top,  rgba(0,0,0,0) 0%,rgba(0,0,0,0.11) 100%); /* Opera 11.10+ */
+    background: -ms-linear-gradient(top,  rgba(0,0,0,0) 0%,rgba(0,0,0,0.11) 100%); /* IE10+ */
+    background: linear-gradient(to bottom,  rgba(0,0,0,0) 0%,rgba(0,0,0,0.11) 100%); /* W3C */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00000000', endColorstr='#1c000000',GradientType=0 ); /* IE6-9 */
+
+
+}
+.thumbnail:hover {
+    border-color: #0088cc;
+    -webkit-box-shadow: 0 1px 4px rgba(0, 105, 214, 0.25);
+    -moz-box-shadow: 0 1px 4px rgba(0, 105, 214, 0.25);
+    box-shadow: 0 1px 4px rgba(0, 105, 214, 0.25);
+}
+.thumbnail > img {
+    display: block;
+    max-width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+}
+.thumbnail .caption {
+    padding: 9px;
+}

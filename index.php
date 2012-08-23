@@ -1,5 +1,6 @@
 <!DOCTYPE html>
-<html lang="en" xmlns="http://www.w3.org/1999/html" xmlns="http://www.w3.org/1999/html">
+<html lang="en" xmlns="http://www.w3.org/1999/html" xmlns="http://www.w3.org/1999/html"
+      xmlns="http://www.w3.org/1999/html">
     <head>
         <meta charset="utf-8">
         <title>ScreenCasta&trade; by Containa</title>
@@ -13,6 +14,8 @@
         <link href="assets/css/bootstrap-responsive.min.css" rel="stylesheet" type="text/css" media="screen" />
         <link href="assets/css/bootstrap-reader.css" rel="stylesheet" type="text/css" media="screen" />
         <link href="assets/css/containa.css" rel="stylesheet" type="text/css" media="screen" />
+        <link href="assets/css/containa.releases.css" rel="stylesheet" type="text/css" media="screen" />
+        <link href="assets/css/containa.details.css" rel="stylesheet" type="text/css" media="screen" />
         <link href="assets/css/containa.screencasta.css" rel="stylesheet" type="text/css" media="screen" />
         <link href="assets/css/containa.screencasta.icons.css" rel="stylesheet" type="text/css" media="screen" />
         <link href="assets/css/containa.screencasta.header.css" rel="stylesheet" type="text/css" media="screen" />
@@ -27,18 +30,17 @@
             =========================================================================================================-->
         <div class="container-fluid" id="mainLayout">
             <div class="row-fluid">
+                <div class="span12">
+                    <h1>Max Muster <small>Mircosite</small></h1>
+                    <p>I am Max Muster and this is my Oeuvre.</p>
+
+                </div>
+            </div>
+            <div class="row-fluid">
                 <div class="span6">
-                    <div class="well casts" id="innerFrame">
-                        <div id="folderView">
-                            <a href="javascript:$('#folderView').alternateScroll('remove');">Remove facescroll scrollbar</a> / <a href="javascript:$('#folderView').alternateScroll({'vertical-bar-class': 'styled-v-bar', 'hide-bars': false });">Add facescroll scrollbar</a></div>
-                    </div><!--/.well -->
-                </div><!--/span-->
-                <div class="span6">
-                    <div id="headerView">
-                        <h1>Containa <small>Mircosite</small></h1>
-                        <p>Select containa from menu and load file details here.</p>
+                    <div id="detailsView">
+                        Click on the thumbnails on the right to select containa details.
                     </div>
-                    <div id="detailsView"></div>
                     <!-- <hr />
                     <div class="alert alert-warning" id="demoRemarksView">
                         <button class="close" data-dismiss="alert">×</button>
@@ -47,6 +49,16 @@
                             <li>Miniature will use placeholder instead of canvas Screenshots </li>
                         </ul>
                     </div> -->
+                </div><!--/span-->
+                <div class="span6">
+                    <div class="casts" id="innerFrame">
+                        <div class="row-fluid">
+                            <div class="span12">
+                                <ul class="thumbnails releases" id="folderView">
+                                    Loading Releases ...
+                                </ul>
+                            </div>
+                        </div><!--/.well -->
                 </div><!--/span-->
             </div><!--/row-->
 
@@ -73,7 +85,9 @@
             <div class="reader-body">
                 <!-- The following is a manual interpretation of tmpl/xhtml demo screencasta containa -->
                 <div class="row-fluid">
-                    <div class="span12"><img src="/.../" id="imageMaster"/></div>
+                    <div class="span12">
+                        Loading Containa ...
+                    </div>
                 </div>
             </div>
             <div class="reader-footer">
@@ -162,11 +176,10 @@
             <!-- item
             =========================================================================================================-->
         <script id="itemTemplate" type="text/x-handlebars-template">
-            <li class="span4">
-                <a href="#readerView" data-toggle="reader" rel="{{containaAlias}}" data-source="{{containaAlias}}" class="readerLink"><span class="icon-eye-close"></span></a> {{data.meta.titel}}
-                <a href="#detailsView" data-toggle="details" rel="{{containaURI}}" data-source="{{containaAlias}}" class="thumbnail detailsLink">
-                    <img src="{{containaURI}}cover.png" /></a>
-
+            <li class="span3 thumbnail">
+                <a href="#detailsView" data-toggle="details" rel="{{containaURI}}" data-source="{{containaAlias}}" class="detailsLink">
+                    <img src="{{containaURI}}{{data.assets.thumbnail}}" /></a>
+                <div class="caption"><a href="#readerView" data-toggle="reader" rel="{{containaAlias}}" data-source="{{containaAlias}}" class="readerLink"><span class="icon-eye-close"></span></a> {{data.meta.titel}}</div>
 
             </li>
         </script>
@@ -176,30 +189,14 @@
         <script id="containaTemplate" type="text/x-handlebars-template">
             <div class="row-fluid">
                 <div class="span12">
-                    <h1>{{meta.titel}}</h1>
+                    <h1>{{data.meta.titel}}</h1>
+                    <div class="meta">
                     {{> meta}}
-                    <div class="asset" contenteditable="true">
-                        <p>Code or Special Quote Asset here. Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut et accumsan et iusto odio dignissim qui blandit praesent luptatum zzril delenit Lorem ipsum dolor sit amet, volutpat.</p>
                     </div>
-                    <div class="asset" contenteditable="true">
-                        <h1>This Asset Box Creator Is the Beauty</h1>
-
-                        <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut et accumsan et iusto odio dignissim qui blandit praesent luptatum zzril delenit Lorem ipsum dolor sit amet, volutpat. </p>
-                        Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut et accumsan et iusto odio dignissim qui blandit praesent luptatum zzril delenit Lorem ipsum dolor sit amet, volutpat.
-                        Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut et accumsan et iusto odio dignissim qui blandit praesent luptatum zzril delenit Lorem ipsum dolor sit amet, volutpat.Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut et accumsan et iusto odio dignissim qui blandit praesent luptatum zzril delenit Lorem ipsum dolor sit amet, volutpat.Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut et accumsan et iusto odio dignissim qui blandit praesent luptatum zzril delenit Lorem ipsum dolor sit amet, volutpat.
-                    </div>
-                    <div class="asset" contenteditable="true">
-                        <h2>
-                            <img class="thumbnail span6" src="root/asset-containa/cover.png" style="float:left; margin-right:20px;
-  margin-bottom:10px" alt="Text?">Oder denkt er an ...?
-                        </h2>
-
-                        <p>
-                            Manche Texte erschlie&szlig;en sich nur aus der n&ouml;tigen Distanz. <!-- usw. -->
-                            Aber das hier, das ist richtiger Text. Und er flie&szlig;t sogar,
-                            n&auml;mlich um die Grafik.<br style="clear:both">
-                        </p>
-                    </div>
+                    {{#each data.body.chapter}}
+                        <h2 class="chapter">Chapter: {{ this.chapterName }}</h2>
+                        <p>{{ this.chapterValue }}</p>
+                    {{/each}}
                 </div>
             </div>
         </script>
@@ -207,16 +204,18 @@
             <!-- meta -->
         <script id="metaPartial" type="text/x-handlebars-template">
             <p>
-                <span class="icon-adjust"></span> {{meta.titel}}<br/>
-                <span class="icon-user"></span> {{meta.author}}<br/>
-                <span class="icon-barcode"></span> {{meta.id.idValue}} ({{meta.id.idType}})</p>
+                <h2> {{data.meta.titel}}</h2>
+                <span class="icon-user"></span> {{data.meta.author}} /
+                <span class="icon-barcode"></span> {{data.meta.id.idValue}} ({{data.meta.id.idType}})</p>
         </script>
 
             <!-- details
             =========================================================================================================-->
         <script id="detailsTemplate" type="text/x-handlebars-template">
             {{> miniature}}
-
+            {{> meta}}
+            {{data.body.prolog}}
+            {{> social}}
         </script>
 
             <!-- headerPartial
@@ -225,11 +224,19 @@
             <h4><span class="icon-adjust"></span> {{file.name}} {{file.path}}</h4>
         </script>
 
+            <!-- socialPartial
+            =========================================================================================================-->
+            <script id="socialPartial" type="text/x-handlebars-template">
+                <h6>Social</h6>
+
+            </script>
+
             <!-- miniaturePartial
             =========================================================================================================-->
         <script id="miniaturePartial" type="text/x-handlebars-template">
-            <a href="" class="thumbnail span6">
-            <img src="root/editor/cover.png" alt="miniatur" id="miniature"></a>
+
+            <a href="#readerView" data-toggle="reader" rel="{{containaAlias}}" data-source="{{containaAlias}}" class="readerLink  thumbnail span6"><img src="root/{{containaAlias}}/{{data.assets.thumbnail}}" alt="miniature" id="miniature"></a>
+            <div class="caption"><a href="#readerView" data-toggle="reader" rel="{{containaAlias}}" data-source="{{containaAlias}}" class="readerLink"><span class="icon-eye-close"></span></a> {{data.meta.titel}}</div>
         </script>
 
 
