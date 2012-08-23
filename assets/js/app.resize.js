@@ -2,7 +2,7 @@
 function sizing(){
     var window_height = $(window).height(),
         window_width = $(window).width(),
-        offset = $('#streamView').offset(),
+        offset = $('#innerFrame').offset(),
         footer = $('footer').outerHeight(true),
         offset_reader = $('.reader > .reader-body').offset(),
         header_reader = $('.reader > .reader-header').outerHeight(true),
