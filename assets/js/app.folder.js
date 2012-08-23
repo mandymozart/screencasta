@@ -38,8 +38,9 @@ $(document).ready( function() {
                     $('#debugger').append(' > jsonreturned ' + data['data']['meta']['titel']);
                     var template = Handlebars.compile($('#detailsTemplate').html());
                     Handlebars.registerPartial("miniature", $("#miniaturePartial").html());
-                    Handlebars.registerPartial("meta", $("#metaPartial").html());
                     Handlebars.registerPartial("social", $("#socialPartial").html());
+                    Handlebars.registerPartial("meta", $("#metaPartial").html());
+
 
                 $('#detailsView').html(template(data));
                 }
@@ -57,13 +58,14 @@ $(document).ready( function() {
                 data: { ajax:containaAlias },
                 success: function(data) {
                     $('#debugger').append(' > jsonreturned ' + data);
-                        var template = Handlebars.compile($('#containaTemplate').html());
-                        Handlebars.registerPartial("header", $("#headerPartial").html());
-                        Handlebars.registerPartial("meta", $("#metaPartial").html());
+                    var template = Handlebars.compile($('#containaTemplate').html());
+                    Handlebars.registerPartial("header", $("#headerPartial").html());
+                    Handlebars.registerPartial("meta", $("#metaPartial").html());
 
-                        $('.reader-body').html(template(data));
+                    $('.reader-body').html(template(data));
                 }
             });
         });
+
     });
 });

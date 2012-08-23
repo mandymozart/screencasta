@@ -2,7 +2,7 @@
 function sizing(){
     var window_height = $(window).height(),
         window_width = $(window).width(),
-        offset = $('#innerFrame').offset(),
+        offset = $('#streamView').offset(),
         footer = $('footer').outerHeight(true),
         offset_reader = $('.reader > .reader-body').offset(),
         header_reader = $('.reader > .reader-header').outerHeight(true),
@@ -18,6 +18,10 @@ function sizing(){
     $('#debugger').append(' > About to scale .reader #innerFrame> resizing w:'+ window_height +' - ( o:' + offset_reader.top + ' - f:' + footer_reader + ' - h:' + header_reader + ' )');
     $('.reader').width(window_width).height(window_height);
     $('.reader > .reader-body').height(window_height-30 - footer_reader - header_reader);
+
+    //scale Stream
+    $('#debugger').append(' > Scaling .stream'+window_height+ '<br />');
+    $('#streamView').height(window_height-offset);
 }
 
 $(window).resize(function(){

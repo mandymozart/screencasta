@@ -14,10 +14,15 @@
     <link href="assets/css/bootstrap-reader.css" rel="stylesheet" type="text/css" media="screen" />
     <link href="assets/css/containa.css" rel="stylesheet" type="text/css" media="screen" />
     <link href="assets/css/containa.editor.css" rel="stylesheet" type="text/css" media="screen" />
+    <link href="assets/css/containa.button.css" rel="stylesheet" type="text/css" media="screen" />
     <link href="assets/css/containa.screencasta.icons.css" rel="stylesheet" type="text/css" media="screen" />
     <link href="assets/css/containa.screencasta.header.css" rel="stylesheet" type="text/css" media="screen" />
     <link href="assets/css/containa.screencasta.casts.css" rel="stylesheet" type="text/css" media="screen" />
     <link href="assets/css/containa.editor.assetsView.css" rel="stylesheet" type="text/css" media="screen" />
+
+    <link href="assets/css/bootstrap.css" rel="stylesheet" type="text/css" />
+    <link href="assets/css/farbtastic.css" rel="stylesheet" type="text/css" />
+    <link href="assets/css/freshereditor.css" rel="stylesheet" type="text/css" />
 
 </head>
 
@@ -29,68 +34,28 @@
 <div class="container-fluid" id="mainLayout">
     <div class="row-fluid">
         <div class="span6">
-            <div class="well casts" id="innerFrame">
-
-                <div id="assetsView">
-                    <h6>New Asset</h6>
-                        <div class="btn-toolbar">
-                            <div class="btn-group">
-                                <button class="btn"><i class="icon-tag"></i> Chapter</button>
-                                <button class="btn"><i class="icon-align-justify"></i> Paragraph</button>
-                                <button class="btn"><i class="icon-picture"></i> Picture</button>
-                                <button class="btn"><i class="icon-film"></i> Video</button>
-                                <button class="btn"><i class="icon-music"></i> Music</button>
-                                <button class="btn"><i class="icon-ok-circle disabled"></i> Advanced</button>
-                            </div>
-                        </div>
-                    <h6>Import existing Containa as Asset</h6>
-                    <ul class="thumbnails">
-                        <li class="span2">
-                            <a href="#" class="thumbnail">
-                                <img src="root/asset-containa/cover.png" alt="" />
-                            </a>
-                        </li>
-                        <li class="span2">
-                            <a href="#" class="thumbnail">
-                                <img src="root/text/cover.png" alt="" />
-                            </a>
-                        </li>
-                        <li class="span2">
-                            <a href="#" class="thumbnail">
-                                <img src="root/containa-user/cover.png" alt="" />
-                            </a>
-                        </li>
-                        <li class="span2">
-                            <a href="#" class="thumbnail">
-                                <img src="root/portal/cover.png" alt="" />
-                            </a>
-                        </li>
-                        <li class="span2">
-                            <a href="#" class="thumbnail">
-                                <img src="root/editor/cover.png" alt="" />
-                            </a>
-                        </li>
-                        <li class="span2">
-                            <a href="#" class="thumbnail">
-                                <img src="root/containa-server/cover.png" alt="" />
-                            </a>
-                        </li>
-                    </ul>
+            <div class="" id="innerFrame">
+                <div class="toolbar" id="toolbar">
                 </div>
-                <h6>Edit your new Asset </h6>
-                <div class="tools">
-                    <div class="btn-toolbar tools">
-                        <div class="btn-group">
-                            <button class="btn"><i class="icon-align-left"></i></button>
-                            <button class="btn"><i class="icon-align-center"></i></button>
-                            <button class="btn"><i class="icon-align-right"></i></button>
-                        </div>
-                        <div class="btn-group">
-                            <button class="btn"><span class="icon-font"></span></button>
-                            <button class="btn" onclick="javascript:document.execCommand(‘bold’,null,null);"><i class="icon-bold"></i></button>
-                            <button class="btn"><span class="icon-italic"></span></button>
-                        </div>
-                        <div class="btn-group">
+
+                <div id="wrapper">
+                    <div id="contentView" class="clear well well-small">
+                        <h2>Chapter: Flowers world wide</h2>
+                        <p>Li Europan lingues es membres del sam familie. Lor separat existentie es un myth. Por scientie, musica, sport etc, litot Europa usa li sam vocabular. Li lingues differe solmen in li grammatica, li pronunciation e li plu commun vocabules. Omnicos directe al desirabilite de un nov lingua franca: On refusa continuar payar custosi traductores. At solmen va esser necessi far uniform grammatica, pronunciation e plu sommun paroles. Ma quande lingues coalesce, li grammatica del resultant lingue es plu simplic e regulari quam ti del coalescent lingues. Li nov lingua franca va esser plu simplic e regulari quam li existent Europan lingues. It va esser tam simplic quam Occidental in fact, it va esser Occidental. A un Angleso it va semblar un simplificat Angles, quam un skeptic Cambridge amico dit me que Occidental es. Li Europan lingues es membres del sam familie. Lor separat existentie es un myth. Por scientie, musica, sport etc, litot Europa usa li sam vocabular. </p>
+                    </div>
+                </div>
+                <button class="btn append btn-large btn-primary" style="width:100%"><span></span> <span class="btn-text">Append</span></button>
+            </div><!--/.well -->
+        </div><!--/span-->
+        <div class="span6">
+            <div id="headerView">
+                <div class="row-fluid">
+                    <div class="span8">
+                        <h1 contenteditable="true">Untitled Containa</h1>
+                        by Max Muster
+                    </div>
+                    <div class="span4">
+                        <div class="btn-group pull-right">
                             <button class="btn"><span class="icon-gift"></span></button>
                             <a class="btn" href="#">Presets</a>
                             <a class="btn dropdown-toggle" data-toggle="dropdown" href="#"><span class="caret"></span></a>
@@ -102,55 +67,11 @@
                         </div>
                     </div>
                 </div>
-
-                <div class="contentView well well-small" contenteditable="true"">
-                    <h1>This Asset Box Creator Is the Beauty</h1>
-
-                    <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut et accumsan et iusto odio dignissim qui blandit praesent luptatum zzril delenit Lorem ipsum dolor sit amet, volutpat. </p>
-                Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut et accumsan et iusto odio dignissim qui blandit praesent luptatum zzril delenit Lorem ipsum dolor sit amet, volutpat.
-                Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut et accumsan et iusto odio dignissim qui blandit praesent luptatum zzril delenit Lorem ipsum dolor sit amet, volutpat.Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut et accumsan et iusto odio dignissim qui blandit praesent luptatum zzril delenit Lorem ipsum dolor sit amet, volutpat.Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut et accumsan et iusto odio dignissim qui blandit praesent luptatum zzril delenit Lorem ipsum dolor sit amet, volutpat.
-
-                </div>
-                <button class="btn edit btn-large" style="width:100%"><span></span> <span class="btn-text">Append</span></button>
-            </div><!--/.well -->
-        </div><!--/span-->
-        <div class="span6">
-            <div id="headerView">
-                <h1>Your Containa Stream</h1>
-                <p>Create, browse content on the left and Append it to the right.</p>
             </div>
-            <div id="detailsView">
-                <div class="asset" contenteditable="true">
-                    <p>Code or Special Quote Asset here. Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut et accumsan et iusto odio dignissim qui blandit praesent luptatum zzril delenit Lorem ipsum dolor sit amet, volutpat.</p>
+                <div id="streamView" class="stream">
+                    &nbsp;
                 </div>
-                <div class="asset" contenteditable="true">
-                    <h1>This Asset Box Creator Is the Beauty</h1>
 
-                    <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut et accumsan et iusto odio dignissim qui blandit praesent luptatum zzril delenit Lorem ipsum dolor sit amet, volutpat. </p>
-                    Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut et accumsan et iusto odio dignissim qui blandit praesent luptatum zzril delenit Lorem ipsum dolor sit amet, volutpat.
-                    Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut et accumsan et iusto odio dignissim qui blandit praesent luptatum zzril delenit Lorem ipsum dolor sit amet, volutpat.Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut et accumsan et iusto odio dignissim qui blandit praesent luptatum zzril delenit Lorem ipsum dolor sit amet, volutpat.Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut et accumsan et iusto odio dignissim qui blandit praesent luptatum zzril delenit Lorem ipsum dolor sit amet, volutpat.
-                </div>
-                <div class="asset" contenteditable="true">
-                        <h2>
-                            <img src="root/asset-containa/cover.png" width="311" style="float:left; margin-right:20px;
-  margin-bottom:10px" alt="Text?">Oder denkt er an ...?
-                        </h2>
-
-                    <p>
-                        Manche Texte erschlie&szlig;en sich nur aus der n&ouml;tigen Distanz. <!-- usw. -->
-                        Aber das hier, das ist richtiger Text. Und er flie&szlig;t sogar,
-                        n&auml;mlich um die Grafik.<br style="clear:both">
-                    </p>
-                </div>
-            </div>
-            <hr />
-            <div class="alert alert-warning" id="demoRemarksView">
-                <button class="close" data-dismiss="alert">×</button>
-                <strong>Demo Remarks!</strong>
-                <ul id="demoRemarksList">
-                    <li>static Demo</li>
-                </ul>
-            </div>
         </div><!--/span-->
     </div><!--/row-->
 
@@ -189,6 +110,9 @@
 
 
 <!-- Modals - come bundled with Bootstrap -->
+
+<!-- Walkthroughs -->
+
 
 <!-- About
 =========================================================================================================-->
@@ -286,6 +210,12 @@
     </div>
 </script>
 
+<script id="assetTemplate" type="text/x-handlebars-template">
+    <div class="asset">
+        {{content}}
+    </div>
+</script>
+
 <!-- meta -->
 <script id="metaPartial" type="text/x-handlebars-template">
     <p>
@@ -313,6 +243,54 @@
     <img src="{{file.path}}{{file.miniature}}" alt="miniatur" id="miniature">
 </script>
 
+<script id="newAssetPartial" type="text/x-handlebars-template">
+    <div id="assetsView">
+        <h6>New Asset</h6>
+    <div class="btn-toolbar">
+        <div class="btn-group">
+        <button class="btn"><i class="icon-tag"></i> Chapter</button>
+    <button class="btn"><i class="icon-align-justify"></i> Paragraph</button>
+    <button class="btn"><i class="icon-picture"></i> Picture</button>
+    <button class="btn"><i class="icon-film"></i> Video</button>
+    <button class="btn"><i class="icon-music"></i> Music</button>
+    <button class="btn"><i class="icon-ok-circle disabled"></i> Advanced</button>
+        </div>
+        </div>
+        <h6>Import existing Containa as Asset</h6>
+    <ul class="thumbnails">
+        <li class="span2">
+        <a href="#" class="thumbnail">
+        <img src="root/asset-containa/cover.png" alt="" />
+        </a>
+        </li>
+        <li class="span2">
+        <a href="#" class="thumbnail">
+        <img src="root/text/cover.png" alt="" />
+        </a>
+        </li>
+        <li class="span2">
+        <a href="#" class="thumbnail">
+        <img src="root/containa-user/cover.png" alt="" />
+        </a>
+        </li>
+        <li class="span2">
+        <a href="#" class="thumbnail">
+        <img src="root/portal/cover.png" alt="" />
+        </a>
+        </li>
+        <li class="span2">
+        <a href="#" class="thumbnail">
+        <img src="root/editor/cover.png" alt="" />
+        </a>
+        </li>
+        <li class="span2">
+        <a href="#" class="thumbnail">
+        <img src="root/containa-server/cover.png" alt="" />
+        </a>
+        </li>
+        </ul>
+        </div>
+</script>
 
 <!-- Loading Scripts -->
 <script src="assets/js/jquery-1.7.2.min.js" type="text/javascript"></script>
@@ -332,12 +310,28 @@
 
 <!-- App // TODO: replace most app components with containa Jquery plugins  -->
 <script src="assets/js/app.js" type="text/javascript"></script>
-<script src="assets/js/app.resize.js" type="text/javascript"></script>
+<script src="assets/js/app.editor.js" type="text/javascript"></script>
+ <script src="assets/js/app.resize.js" type="text/javascript"></script>
 <script src="assets/js/app.scroll.js" type="text/javascript"></script>
 <script src="assets/js/app.hasher.js" type="text/javascript"></script>
 
 <!-- Containa Jquery Plugins -->
 <script src="assets/js/containa-reader.js" type="text/javascript"></script>
+
+<!-- Fresheditor -->
+<script src="assets/js/shortcut.js" type="text/javascript"></script>
+<script src="assets/js/farbtastic.js" type="text/javascript"></script>
+<script src="assets/js/freshereditor.js" type="text/javascript"></script>
+<script type="text/javascript">
+    $(document).ready(function() {
+        $('#contentView').freshereditor({toolbar_selector: "#toolbar", excludes: ['removeFormat', 'insertheading4','backcolor','fontname','FontSize']});
+        $("#contentView").freshereditor("edit", true);
+        $("#contentView").on('change', function() {
+            console.log("content changed");
+        });
+    });
+</script>
+
 </body>
 
 </html>

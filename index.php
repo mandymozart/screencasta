@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="en" xmlns="http://www.w3.org/1999/html" xmlns="http://www.w3.org/1999/html"
-      xmlns="http://www.w3.org/1999/html">
+      xmlns="http://www.w3.org/1999/html" xmlns="http://www.w3.org/1999/html">
     <head>
         <meta charset="utf-8">
         <title>ScreenCasta&trade; by Containa</title>
@@ -212,10 +212,15 @@
             <!-- details
             =========================================================================================================-->
         <script id="detailsTemplate" type="text/x-handlebars-template">
+
             {{> miniature}}
             {{> meta}}
-            {{data.body.prolog}}
+
             {{> social}}
+            <h3>Abstract</h3>
+            <p>{{data.body.prolog}}</p>
+            <small>Someone famous <cite title="Source Title">Source Title</cite></small>
+
         </script>
 
             <!-- headerPartial
@@ -227,16 +232,19 @@
             <!-- socialPartial
             =========================================================================================================-->
             <script id="socialPartial" type="text/x-handlebars-template">
-                <h6>Social</h6>
-
+                <div class="btn-toolbar" style="margin: 0;">
+                    <div class="btn-group">
+                        <a class="btn" href="#">Open</a>
+                        <a class="btn" href="#">Share!</a>
+                        <a class="btn" href="#">Buy!</a>
+                    </div><!-- /btn-group -->
+                </div>
             </script>
 
             <!-- miniaturePartial
             =========================================================================================================-->
         <script id="miniaturePartial" type="text/x-handlebars-template">
-
             <a href="#readerView" data-toggle="reader" rel="{{containaAlias}}" data-source="{{containaAlias}}" class="readerLink  thumbnail span6"><img src="root/{{containaAlias}}/{{data.assets.thumbnail}}" alt="miniature" id="miniature"></a>
-            <div class="caption"><a href="#readerView" data-toggle="reader" rel="{{containaAlias}}" data-source="{{containaAlias}}" class="readerLink"><span class="icon-eye-close"></span></a> {{data.meta.titel}}</div>
         </script>
 
 
@@ -262,6 +270,7 @@
         <script src="assets/js/app.scroll.js" type="text/javascript"></script>
         <script src="assets/js/app.hasher.js" type="text/javascript"></script>
         <script src="assets/js/app.folder.js" type="text/javascript"></script>
+        <script src="assets/js/app.reader.js" type="text/javascript"></script>
 
         <!-- Containa Jquery Plugins -->
         <script src="assets/js/containa-reader.js" type="text/javascript"></script>

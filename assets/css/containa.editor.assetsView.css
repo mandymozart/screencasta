@@ -1,19 +1,16 @@
-#assetsView {
+#streamView {
     min-width:100%;
 }
 
+#streamView  {
+}
+
 .asset {
-    padding:10px;
+    margin:0px;
+    padding:20px;
+    background: rgba(255,255,255,0.9);
 }
 
 .asset:hover {
-    background: -moz-linear-gradient(top,  rgba(242,245,246,0.42) 0%, rgba(227,234,237,0.41) 37%, rgba(200,215,220,0.4) 100%); /* FF3.6+ */
-    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(242,245,246,0.42)), color-stop(37%,rgba(227,234,237,0.41)), color-stop(100%,rgba(200,215,220,0.4))); /* Chrome,Safari4+ */
-    background: -webkit-linear-gradient(top,  rgba(242,245,246,0.42) 0%,rgba(227,234,237,0.41) 37%,rgba(200,215,220,0.4) 100%); /* Chrome10+,Safari5.1+ */
-    background: -o-linear-gradient(top,  rgba(242,245,246,0.42) 0%,rgba(227,234,237,0.41) 37%,rgba(200,215,220,0.4) 100%); /* Opera 11.10+ */
-    background: -ms-linear-gradient(top,  rgba(242,245,246,0.42) 0%,rgba(227,234,237,0.41) 37%,rgba(200,215,220,0.4) 100%); /* IE10+ */
-    background: linear-gradient(to bottom,  rgba(242,245,246,0.42) 0%,rgba(227,234,237,0.41) 37%,rgba(200,215,220,0.4) 100%); /* W3C */
-    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#6bf2f5f6', endColorstr='#66c8d7dc',GradientType=0 ); /* IE6-9 */
-
-
+    background: rgba(255,255,255,0.5);
 }
