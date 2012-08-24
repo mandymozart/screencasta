@@ -193,12 +193,12 @@
 <script id="assetEditorTemplate" type="text/x-handlebars-template">
     <div class="assetEditor">
         <ul class="nav nav-tabs" id="assetEditorTab{{assetId}}">
-            <li class="active"><a href="#textTab{{assetId}}"><span class="icon-align-justify"></span></a></li>
+            <li><a href="#textTab{{assetId}}"><span class="icon-align-justify"></span></a></li>
             <li><a href="#mediaTab{{assetId}}"><span class="icon-film"></span></a></li>
             <li><a href="#audioTab{{assetId}}"><span class="icon-headphones"></span></a></li>
         </ul>
         <div class="tab-content">
-            <div class="tab-pane active" id="{{assetId}}">
+            <div class="tab-pane active" id="textTab{{assetId}}">
                 <div id="contentView4" contenteditable="true" class="clear assetTextbox">
                     |
                 </div>

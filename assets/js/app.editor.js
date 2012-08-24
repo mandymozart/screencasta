@@ -30,28 +30,21 @@ function renderPreset(preset){
 
 }
 
+function enableTabs(){
+    var n = $("#editorView .assetEditor").length;
+    for(var i=0;i<n;i++){
+        $('#assetEditorTab'+1+' a').click(function (e) {
+            e.preventDefault();
+            $(this).tab('show');
+        });
+    }
+}
+
 $(document).ready(function(){
     $('footer').hide();
 
     renderPreset('newspaper');
 
-
-
-    $('#myTab1 a').click(function (e) {
-        e.preventDefault();
-        $(this).tab('show');
-    })
-    $('#myTab2 a').click(function (e) {
-        e.preventDefault();
-        $(this).tab('show');
-    })
-    $('#myTab3 a').click(function (e) {
-        e.preventDefault();
-        $(this).tab('show');
-    })
-    $('#myTab4 a').click(function (e) {
-        e.preventDefault();
-        $(this).tab('show');
-    })
+    enableTabs();
 
 });
