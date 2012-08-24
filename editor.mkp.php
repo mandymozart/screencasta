@@ -48,7 +48,7 @@
                     <div class="span2">
                         <div class="btn-group pull-right">
 
-                            <a class="btn disabled" href="#">Presets</a>
+                            <a class="btn disabled" id="presetName" href="#">Presets</a>
                             <a class="btn dropdown-toggle" data-toggle="dropdown" href="#"><span class="caret"></span></a>
                             <ul class="dropdown-menu" id="presetDropdown">
                                 <li><a href="#" data-preset="default">Default</a></li>
