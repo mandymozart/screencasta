@@ -16,21 +16,40 @@ $('.append').click(function(){
 
 });
 
+// render preset to editorView
+function renderPreset(preset){
 
+    var template = Handlebars.compile($('#'+preset+'PresetTemplate').html());
+    Handlebars.registerPartial("assetEditor", $('#assetEditorTemplate').html());
+
+    data = new Object();
+    data['assetId'] = "1";
+    data['else'] = "something";
+
+    $('#editorView').html(template(data));
+
+}
 
 $(document).ready(function(){
     $('footer').hide();
 
-    $('#contentView').freshereditor({toolbar_selector: "#toolbar", excludes: ['removeFormat', 'insertheading4','backcolor','fontname','FontSize','strikethrough','forecolor','justifyleft','justifyright','justifycenter','justifyfull','createlink','insertimage','insertorderedlist','insertunorderedlist','insertparagraph','insertheading1','insertheading2','insertheading3','blockquote','code','superscript','subscript']});
-    $("#contentView").freshereditor("edit", true);
-    $('#contentView').focus( function(){
+    renderPreset('newspaper');
 
-    });
-    $("#contentView").on('change', function() {
-    console.log("content changed");
-    });
 
-    $('#myTab a').click(function (e) {
+
+    $('#myTab1 a').click(function (e) {
+        e.preventDefault();
+        $(this).tab('show');
+    })
+    $('#myTab2 a').click(function (e) {
+        e.preventDefault();
+        $(this).tab('show');
+    })
+    $('#myTab3 a').click(function (e) {
+        e.preventDefault();
+        $(this).tab('show');
+    })
+    $('#myTab4 a').click(function (e) {
         e.preventDefault();
         $(this).tab('show');
     })
