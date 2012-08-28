@@ -173,6 +173,16 @@
             </div>
         </script>
 
+            <script id="releaseListTemplate" type="text/x-handlebars-template">
+
+                {{#releases}}
+                    <li class="span3 thumbnail">
+                        <a href="#detailsView" data-toggle="details" data-id="{{containaId}}" rel="{{containaURI}}" data-source="{{containaAlias}}" class="detailsLink">
+                            <img src="{{containaURI}}{{assets.thumbnail}}" /></a>
+                        <div class="caption"><a href="#readerView" data-toggle="reader" rel="{{containaAlias}}" data-source="{{containaAlias}}" class="readerLink"><span class="icon-eye-close"></span></a> {{data.meta.titel}}</div>
+                    </li>
+                {{/releases}}
+            </script>
             <!-- item
             =========================================================================================================-->
         <script id="itemTemplate" type="text/x-handlebars-template">
@@ -204,21 +214,29 @@
             <!-- meta -->
         <script id="metaPartial" type="text/x-handlebars-template">
             <p>
-                <h2> {{data.meta.titel}}</h2>
-                <span class="icon-user"></span> {{data.meta.author}} /
-                <span class="icon-barcode"></span> {{data.meta.id.idValue}} ({{data.meta.id.idType}})</p>
+                <h2> {{meta.titel}}</h2>
+                <span class="icon-user"></span> {{meta.author}} /
+                <span class="icon-barcode"></span> {{meta.id.idValue}} ({{meta.id.idType}})</p>
         </script>
 
             <!-- details
             =========================================================================================================-->
         <script id="detailsTemplate" type="text/x-handlebars-template">
 
-            {{> miniature}}
-            {{> meta}}
+
+            <a href="#readerView" data-toggle="reader" rel="{{containaAlias}}" data-source="{{containaAlias}}"
+               class="readerLink  thumbnail span6">
+                <img src="root/{{containaAlias}}/{{assets.thumbnail}}" alt="miniature" id="miniature">
+            </a>
+            <p>
+            <h2> {{meta.titel}}</h2>
+            <span class="icon-user"></span> {{meta.author}} /
+            <span class="icon-barcode"></span> {{meta.id.idValue}} ({{meta.id.idType}})
+            </p>
 
             {{> social}}
             <h3>Abstract</h3>
-            <p>{{data.body.prolog}}</p>
+            <p>{{body.prolog}}</p>
             <small>Someone famous <cite title="Source Title">Source Title</cite></small>
 
         </script>
@@ -244,7 +262,7 @@
             <!-- miniaturePartial
             =========================================================================================================-->
         <script id="miniaturePartial" type="text/x-handlebars-template">
-            <a href="#readerView" data-toggle="reader" rel="{{containaAlias}}" data-source="{{containaAlias}}" class="readerLink  thumbnail span6"><img src="root/{{containaAlias}}/{{data.assets.thumbnail}}" alt="miniature" id="miniature"></a>
+            <a href="#readerView" data-toggle="reader" rel="{{containaAlias}}" data-source="{{containaAlias}}" class="readerLink  thumbnail span6"><img src="root/{{containaAlias}}/{{assets.thumbnail}}" alt="miniature" id="miniature"></a>
         </script>
 
 
@@ -253,6 +271,11 @@
         <script src="assets/js/jquery.easing.1.3.js" type="text/javascript"></script>
         <script src="assets/js/jquery-ui.min.js" type="text/javascript" ></script>
         <script src="assets/js/jquery.ui.touch-punch.min.js" type="text/javascript" ></script>
+
+            <script src="assets/js/underscore.js" type="text/javascript" ></script>
+            <script src="assets/js/json2.js" type="text/javascript" ></script>
+            <script src="assets/js/backbone.js" type="text/javascript" ></script>
+            <script src="assets/js/backbone.marionette.js" type="text/javascript" ></script>
 
         <!-- Scrollbehavior/Style -->
         <script src="assets/js/jquery.scrollTo.js" type="text/javascript"></script>
@@ -267,10 +290,10 @@
         <!-- App // TODO: replace most app components with containa Jquery plugins  -->
         <script src="assets/js/app.js" type="text/javascript"></script>
         <script src="assets/js/app.resize.js" type="text/javascript"></script>
-        <script src="assets/js/app.scroll.js" type="text/javascript"></script>
-        <script src="assets/js/app.hasher.js" type="text/javascript"></script>
-        <script src="assets/js/app.folder.js" type="text/javascript"></script>
-        <script src="assets/js/app.reader.js" type="text/javascript"></script>
+<!--            <script src="assets/js/app.folder.js" type="text/javascript"></script>-->
+            <script src="assets/js/app.scroll.js" type="text/javascript"></script>
+
+
 
         <!-- Containa Jquery Plugins -->
         <script src="assets/js/containa-reader.js" type="text/javascript"></script>

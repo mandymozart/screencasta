@@ -28,13 +28,19 @@ if( file_exists($root . $dir) ) {
                 if(file_exists($root.$dir.$folder."/index.json")){
                                 $data = json_decode( file_get_contents($root . $dir . $folder . "/index.json"), true);
 
-                                // Add Element to Array
-                                $filesArr[] = array(
-                                    'hasher' => $dir,
-                                    'containaAlias' => $folder,
-                                    'containaURI' => 'root/'.$dir.$folder."/",
-                                    'data' => $data
-                                );
+//                                // Add Element to Array
+//                                $filesArr[] = array(
+//                                    'hasher' => $dir,
+//                                    'containaAlias' => $folder,
+//                                    'containaURI' => 'root/'.$dir.$folder."/",
+//                                    'data' => $data
+//                                );
+                    // XXX quick hack
+                    $data['containaURI'] = 'root/'.$dir.$folder."/";
+                    $data['containaAlias'] = $folder;
+
+
+                    $filesArr[] = $data;
                 }
             }
         }
